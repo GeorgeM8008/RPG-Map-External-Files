@@ -1,4 +1,5 @@
 import Inventory
+import Combat
 row = 3
 col = 0
 Loop = True
@@ -15,11 +16,11 @@ Tile_Descriptions = {
     "Starting Room" : {
         "Description" : "You find yourself on an enemy ship and must escape"},
     "Enemy Room" : {
-        "Description" : "You enter room with an enemy inside",
-        "Effect" : "You lose 2 health" },
+        "Description" : "You enter room and find an alien enemy inside",
+        "Effect" : "You prepare yourself for combat" },
     "Escape Pod" : {
         "Description" : "You find a lone escape pod at the end of the ship",
-        "Effect" : "You win" },
+        "Effect" : "You jam the keys you found in the ignition and blast off into space.\n\nYou win!" },
     "Supply Room" : {
         "Description" : "You find a small storage room with a Medkit hanging on the wall",
         "Effect" : "Do you choose to pick it up?" },
@@ -80,6 +81,15 @@ def Move():
         else:
             for item in Inventory.inventory:
                 print(f"\n-{item}\n")
+            choiceI = input("Would you like to use anything?")
+            if choiceI == "Medkit":
+                print("You used the medkit on yourself")
+                Combat.combat_stats['Player']['Health'] = 20
+                Inventory.inventory.remove("Medkit")
+            elif choiceI == "Keys":
+                print("You have nothing to use those on")
+            else:
+                print("I didn't understand that")
     elif choice == "Map":
         with open('map.txt') as file:
             contents = file.read()
