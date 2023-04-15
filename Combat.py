@@ -29,11 +29,10 @@ def combat():
                     if combat_stats['Enemy1']['Health'] == 0:
                         print("You defeated the enemy\n")
                         break
-                        Map.Move()
             else:
                 print("I didn't understand that")
                 combat()
-            print("The alien swings and deals 4 damage to you\n")
+            print("The alien swings and deals 2 damage to you\n")
             combat_stats['Player']['Health'] -= combat_stats['Enemy1']['Attack']
             if combat_stats['Player']['Health'] == 0:
                 print("You have died\nYou lose")
@@ -50,7 +49,6 @@ def combat():
                     if combat_stats['Enemy4']['Health'] == 0:
                         print("You defeated the enemy\n")
                         break
-                        Map.Move()
             else:
                 print("I didn't understand that")
                 combat()
@@ -71,7 +69,6 @@ def combat():
                     if combat_stats['Enemy3']['Health'] == 0:
                         print("You defeated the enemy\n")
                         break
-                        Map.Move()
             else:
                 print("I didn't understand that")
                 combat()
@@ -92,7 +89,6 @@ def combat():
                     if combat_stats['Enemy4']['Health'] == 0:
                         print("You defeated the enemy\n")
                         break
-                        Map.Move()
             else:
                 print("I didn't understand that")
                 combat()
