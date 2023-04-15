@@ -1,5 +1,6 @@
+#Importing map file
 import Map
-
+#This is a nested dictionary for the stats of the player and enemies
 combat_stats = {
     "Player" : {
         "Attack" : 3,
@@ -17,6 +18,7 @@ combat_stats = {
         "Attack" : 4,
         "Health" : 6 }
 }
+#This function detects if you land on an enemy tile and performs combat
 def combat():
     if Map.row == 0 and Map.col == 0:
         while combat_stats['Player']['Health'] > 0 and combat_stats['Enemy1']['Health'] > 0:
